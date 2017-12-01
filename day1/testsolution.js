@@ -4,14 +4,14 @@
 // 1234 produces 0 because no digit matches the next.
 // 91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
 
-const stringToSum = '1122';
+const stringToSum = '91212129';
 let windowOfSum = 0;
 
 stringToSum.split('').forEach((digit, index) => {
   let firstNumber = parseInt(digit);
   let secondNumber = 0;
 
-  if (index === stringToSum.length) {
+  if (index === stringToSum.length - 1) {
     secondNumber = parseInt(stringToSum[0]);
   } else {
     secondNumber = parseInt(stringToSum[index + 1]);
