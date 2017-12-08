@@ -1,4 +1,4 @@
-const puzzleInput = 1024;
+const puzzleInput = 23;
 
 const whichOrbit = pointToFind => {
   let orbit = 0;
