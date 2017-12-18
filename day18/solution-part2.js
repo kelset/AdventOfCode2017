@@ -1,16 +1,14 @@
-const instructions = `set a 1
-add a 2
-mul a a
-mod a 5
-snd a
-set a 0
+const instructions = `snd 1
+snd 2
+snd p
 rcv a
-jgz a -1
-set a 1
-jgz a -2`;
+rcv b
+rcv c
+rcv d`;
 
-const soundBoard = instructionString => {
-  const registries = [];
+const deadlockCounter = 0;
+
+const soundBoard = (instructionString, registries) => {
   const instructionSet = instructionString.split('\n');
 
   let lastSoundPlayed = 0;
@@ -67,6 +65,15 @@ const soundBoard = instructionString => {
 
   return 0;
 };
+
+const messageQueueA = []; // from prog 0 to prog 1
+const messageQueueB = []; // from prog 1 to prog 0
+
+const registries0 = [];
+registries0['p'] = 0;
+
+const registries1 = [];
+registries1['p'] = 1;
 
 const recoveredSound = soundBoard(instructions);
 
